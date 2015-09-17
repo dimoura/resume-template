@@ -8,9 +8,7 @@ For this project we are using:
   * Fontawesome <3 (cause everyone loves icons)
 * Slim (for develop improvement)
 * Coffee
-  * AngularJs
   * ChartJs (for skill list)
-  * Jasmine
 
 
 This is a guideline, and if you have any question, pleasea ask me =D
