@@ -31,7 +31,7 @@
       anchor_point = $(this).attr('href');
       $('.nav li').removeClass('active');
       $(this).parent().addClass('active');
-      height_variation = -400;
+      height_variation = -450;
       if ($('header').hasClass('fixed-header')) {
         height_variation = -100;
       }
