@@ -8,36 +8,47 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600italic|Abel" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" />
     <link href="css/bootstrap-theme.min.css" media="screen" rel="stylesheet" />
-    <link href="css/resume.css" media="screen" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" media="screen" rel="stylesheet" />
+    <link href="css/application.css" media="screen" rel="stylesheet" />
+    <script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/chartjs.min.js" type="text/javascript"></script>
     <script src="js/application.js" type="text/javascript"></script>
   </head>
   <body>
     <header class="header">
-      <div class="container">
-        <div class="cover">
-          <h1>
-            Sup! My name is <mark>Jefferson Moura</mark> and I'm a Front End Developer =)
-          </h1>
-          <ul class="social-shares">
-            <li>
-              <a>Linkedin</a>
-            </li>
-            <li>
-              <a>Twitter</a>
-            </li>
-            <li>
-              <a>GitHub</a>
-            </li>
-            <li>
-              <a>Email</a>
-            </li>
-          </ul>
+      <div class="cover">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <ul class="social-shares">
+                <li>
+                  <a><i class="fa fa-heart"></i>Linkedin</a>
+                </li>
+                <li>
+                  <a><i class="fa fa-heart"></i>Twitter</a>
+                </li>
+                <li>
+                  <a><i class="fa fa-heart"></i>GitHub</a>
+                </li>
+                <li>
+                  <a><i class="fa fa-heart"></i>Email        </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-8">
+              <h1>
+                Sup! My name is <mark>Jefferson Moura</mark> and I'm a Front End Developer =)
+              </h1>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="container">
         <nav>
           <div class="profile-avatar">
-            <img src="images/jeff-photo.png" />
+            <img class="img-responsive" src="images/avatar.jpg" />
           </div>
-          <ul class="nav pull-right">
+          <ul class="nav">
             <li>
               <a>Sumary</a>
             </li>
@@ -55,7 +66,7 @@
       </div>
     </header>
     <div class="container">
-      <section id="sumary">
+      <section class="col-sm-offset-3" id="sumary">
         <h1>
           Hey traveller! =)
         </h1>
@@ -73,19 +84,28 @@
         </p>
       </section>
       <section id="skills">
-        <div class="charts chart-doughnut" id="chart-frontend">
-          <canvas></canvas>
+        <div class="charts chart-doughnut">
+          <h2>
+            Front End
+          </h2>
+          <canvas id="chart-frontend"></canvas>
         </div>
-        <div class="charts chart-doughnut" id="chart-backend">
-          <canvas></canvas>
+        <div class="charts chart-doughnut">
+          <h2>
+            Back End
+          </h2>
+          <canvas id="chart-backend"></canvas>
         </div>
-        <div class="charts chart-doughnut" id="chart-manager">
-          <canvas></canvas>
+        <div class="charts chart-doughnut">
+          <h2>
+            Manager
+          </h2>
+          <canvas id="chart-manager"></canvas>
         </div>
         <p>
           As a Front End I have knowledge on:
         </p>
-        <ul class="skill-list">
+        <ul class="skill-list frontend-skills">
           <li>
             Css / Css 3
           </li>
@@ -125,25 +145,51 @@
         </ul>
         <p>
           As a Backend learner I have some skills on:
-          li Php
-          li Laravel
-          li Ruby [on Rails]
-          li .Net [knowledge of the language]
-          li MySql
-          li PostgreSQL
         </p>
+        <ul class="skill-list backend-skills">
+          <li>
+            Php
+          </li>
+          <li>
+            Laravel
+          </li>
+          <li>
+            Ruby [on Rails]
+          </li>
+          <li>
+            .Net [knowledge of the language]
+          </li>
+          <li>
+            MySql
+          </li>
+          <li>
+            PostgreSQL
+          </li>
+        </ul>
         <p>
           As person and continuous learner I've some interestes on:
-          li Ux/Ui Design
-          li Motion Graphic
-          li Roller Skating
-          li Books
-          li Books (yeah! really like them)
         </p>
+        <ul class="skill-list personal-skills">
+          <li>
+            Ux/Ui Design
+          </li>
+          <li>
+            Motion Graphic
+          </li>
+          <li>
+            Roller Skating
+          </li>
+          <li>
+            Books
+          </li>
+          <li>
+            Books (yeah! really like them)
+          </li>
+        </ul>
       </section>
       <section id="experiences">
         <div class="row experience">
-          <div class="col-sm-3">
+          <div class="col-sm-3 experience-location">
             <h1 id="volunteer-olympia">
               Olympia School<mark>2008 - 2012</mark>
             </h1>
@@ -151,7 +197,7 @@
               rule: Instructor
             </p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-9 experience-description">
             <p>
               • Taught and coached some needy children in volleyball, soccer, basketball and table tennis
             </p>
@@ -170,7 +216,7 @@
           </div>
         </div>
         <div class="row experience">
-          <div class="col-sm-3">
+          <div class="col-sm-3 experience-location">
             <h1 id="volunteer-olympia">
               Nazareno’s Church<mark>2002 - 2006</mark>
             </h1>
@@ -178,7 +224,7 @@
               rule: Instructor
             </p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-9 experience-description">
             <p>
               • Helped form the social character of children with low income
             </p>
@@ -200,7 +246,7 @@
           </div>
         </div>
         <div class="row experience">
-          <div class="col-sm-3">
+          <div class="col-sm-3 experience-location">
             <h1 id="company-99jobs">
               99jobs<mark>2014 - current</mark>
             </h1>
@@ -208,7 +254,7 @@
               rule: Front End Developer
             </p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-9 experience-description">
             <p>
               • Working on a huge plataforma that connects what people loves with their desired jobs
             </p>
@@ -227,7 +273,7 @@
           </div>
         </div>
         <div class="row experience">
-          <div class="col-sm-3">
+          <div class="col-sm-3 experience-location">
             <h1 id="company-dimoura">
               diMoura<mark>2006 - current</mark>
             </h1>
@@ -235,7 +281,7 @@
               rule: Project manager
             </p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-9 experience-description">
             <p>
               • Create a nice ambient for developers grow and develop well
             </p>
@@ -251,7 +297,7 @@
           </div>
         </div>
         <div class="row experience">
-          <div class="col-sm-3">
+          <div class="col-sm-3 experience-location">
             <h1 id="company-lampejos">
               Lampejos<mark>2009 - 2014</mark>
             </h1>
@@ -259,7 +305,7 @@
               rule: Fullstack Developer PhP
             </p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-9 experience-description">
             <p>
               • Create applications and websites all the way!
             </p>
@@ -277,7 +323,7 @@
       </section>
       <section id="education">
         <div class="row education">
-          <div class="col-sm-3">
+          <div class="col-sm-6 col-md-3">
             <h2>
               <i class="fa fa-heart"></i>Formal Education
             </h2>
@@ -296,7 +342,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-6 col-md-3">
             <h2>
               <i class="fa fa-heart"></i>Professional goals
             </h2>
@@ -315,7 +361,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-6 col-md-3">
             <h2>
               <i class="fa fa-heart"></i>Personal Formation
             </h2>
@@ -334,7 +380,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-6 col-md-3">
             <h2>
               <i class="fa fa-heart"></i>Researchs and Papers
             </h2>

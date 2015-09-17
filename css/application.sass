@@ -1,0 +1,163 @@
+@charset "utf-8"
+
+@import config.sass
+
+/* Header */
+.cover
+  background-color: $brand-pink
+  padding-bottom: 100px
+  h1
+    font-size: 40px
+    line-height: 40px
+    color: $white
+
+    mark
+      color: $brand-yellow
+      background-color: $brand-blue
+
+  .social-shares
+    width: 100%
+    text-align: left
+    padding: $padding-large-vertical 0
+
+    li
+      display: inline-block
+      width: 24%
+      text-align: center
+      list-style: none
+      font-size: 18px
+      color: $white
+      
+      &:hover
+        border-bottom: 1px solid $white
+
+      +respond-to-md
+        width: 40%
+        margin: $padding-small-vertical $padding-large-horizontal
+      +respond-to-sm
+        width: 15%
+        margin: 0 $padding-base-horizontal
+      a
+        color: $brand-yellow
+
+        i
+          border: 2px solid $white
+          border-radius: 100%
+          padding: $padding-base-vertical
+          font-size: 20px
+          color: $white
+          margin: 0 20%
+
+
+nav
+  position: relative
+
+  .profile-avatar
+    width: 200px
+    height: 200px
+    border: 2px solid $white
+    position: absolute
+    top: -100px
+    left: 20px
+
+  .nav
+    width: 100%
+    text-align: left
+    padding-left: 25%
+
+    li
+      display: inline-block
+      list-style: none
+      padding-right: $padding-large-horizontal
+      
+      a
+        +font-bold(16px)
+
+      &:hover,
+      &.active
+        a
+          padding-bottom: $padding-base-vertical
+          border-bottom: 1px solid $brand-pink
+          color: $brand-pink
+
+.charts
+  width: 33%
+  display: inline-block
+  position: relative
+
+  h2
+    width: 100%
+    +font-title(18px)
+    position: absolute
+    top: 105px
+    text-align: center
+
+  canvas
+    width: 100%
+    height: 250px
+
+#skills
+  .skill-list
+    width: 100%
+
+    li
+      display: inline-block
+      list-style: none
+      background-color: $brand-pink
+      padding: $padding-small-vertical $padding-small-horizontal
+      color: $white
+      border-radius: 10px 0
+      
+    &.backend-skills li
+      background-color: $brand-orange
+
+    &.personal-skills li
+      background-color: $brand-blue
+
+#experiences
+  .experience
+    padding-top: $padding-base-vertical*5
+    margin-top: $padding-base-vertical*5
+    border-top: 1px solid $brand-blue
+    .experience-location
+      h1
+        +font-title(30px)
+        text-align: left
+        color: $brand-purple
+
+        mark
+          display: block
+          background: none
+          color: $brand-blue
+      p
+        +font-bold(14px)
+
+    .experience-description
+      p
+        +font-paragraph(14px)
+        color: #333
+
+#education
+  padding-top: $padding-large-vertical*3
+  border-top: 2px solid $brand-purple
+
+  h2
+    +font-title(24px)
+    color: $brand-blue
+
+  i
+    margin-right: $padding-base-horizontal
+    color: $brand-pink
+
+  .education-list
+    +font-paragraph(12px)
+    color: $grey-200
+
+    h3
+      +font-bold(14px)
+      color: $grey-500
+      margin-bottom: 0px
+    
+    a
+      display: block
+      color: $brand-pink
