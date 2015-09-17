@@ -48,6 +48,7 @@ section
         margin: 0 $padding-base-horizontal
       a
         color: $brand-yellow
+        text-decoration: none
 
         i
           border: 2px solid $white
@@ -58,7 +59,8 @@ section
           margin: $padding-base-vertical 20%
 
       &:hover
-        border-bottom: 1px solid $brand-yellow
+        a
+          color: $white
 
         i
           color: $brand-yellow
@@ -68,7 +70,6 @@ nav
 
   .profile-avatar
     width: 200px
-    border: 2px solid $white
     position: absolute
     top: -100px
     left: 20px
@@ -77,7 +78,15 @@ nav
     +respond-to-md
       width: 18%
       top: -10px
-
+    img
+      border: 2px solid $white
+    
+    .profile-status
+      li
+        +font-title(18px)
+        text-align: left
+        margin-bottom: $padding-base-vertical
+        color: $brand-blue
   .nav
     width: 100%
     text-align: left
@@ -120,6 +129,9 @@ nav
     top: 0px
     transition: all 0.3s ease
 
+    ul
+      display: none
+
   .nav
     padding-left: 130px
     transition: all 0.3s ease
@@ -130,34 +142,34 @@ section
     color: $brand-purple
     margin: $padding-base-vertical*5 0
 
-#skills
+.charts
+  width: 32%
+  display: inline-block
+  position: relative
+  text-align: center
 
-  .charts
-    width: 32%
-    display: inline-block
-    position: relative
+  h3
+    width: 100%
+    +font-title(18px)
+    position: absolute
+    top: 105px
     text-align: center
 
-    h3
-      width: 100%
-      +font-title(18px)
-      position: absolute
-      top: 105px
-      text-align: center
+    +respond-to-md
+      top: 80px
 
-      +respond-to-md
-        top: 80px
+  canvas
+    width: 100%
+    height: 250px
 
-    canvas
-      width: 100%
-      height: 250px
+    +respond-to-md
+      height: 200px
 
-      +respond-to-md
-        height: 200px
-
+#skills
   .skill-list
     width: 100%
     padding-left: 0
+    margin-bottom: $padding-base-vertical*4
 
     li
       display: inline-block

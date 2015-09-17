@@ -62,6 +62,7 @@ section {
 
 .cover .social-shares li a {
   color: #ECFF21;
+  text-decoration: none;
 }
 
 .cover .social-shares li a i {
@@ -73,8 +74,8 @@ section {
   margin: 10px 20%;
 }
 
-.cover .social-shares li:hover {
-  border-bottom: 1px solid #ECFF21;
+.cover .social-shares li:hover a {
+  color: #fff;
 }
 
 .cover .social-shares li:hover i {
@@ -87,7 +88,6 @@ nav {
 
 nav .profile-avatar {
   width: 200px;
-  border: 2px solid #fff;
   position: absolute;
   top: -100px;
   left: 20px;
@@ -99,6 +99,21 @@ nav .profile-avatar {
     width: 18%;
     top: -10px;
   }
+}
+
+nav .profile-avatar img {
+  border: 2px solid #fff;
+}
+
+nav .profile-avatar .profile-status li {
+  font-family: 'Abel', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 15.3px;
+  text-align: left;
+  margin-bottom: 10px;
+  color: #5d83c2;
 }
 
 nav .nav {
@@ -155,6 +170,10 @@ nav .nav li.active a {
   transition: all 0.3s ease;
 }
 
+.fixed-header .profile-avatar ul {
+  display: none;
+}
+
 .fixed-header .nav {
   padding-left: 130px;
   transition: all 0.3s ease;
@@ -170,14 +189,14 @@ section .section-title {
   margin: 50px 0;
 }
 
-#skills .charts {
+.charts {
   width: 32%;
   display: inline-block;
   position: relative;
   text-align: center;
 }
 
-#skills .charts h3 {
+.charts h3 {
   width: 100%;
   font-family: 'Abel', Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -190,18 +209,18 @@ section .section-title {
 }
 
 @media all and (max-width: 990px) {
-  #skills .charts h3 {
+  .charts h3 {
     top: 80px;
   }
 }
 
-#skills .charts canvas {
+.charts canvas {
   width: 100%;
   height: 250px;
 }
 
 @media all and (max-width: 990px) {
-  #skills .charts canvas {
+  .charts canvas {
     height: 200px;
   }
 }
@@ -209,6 +228,7 @@ section .section-title {
 #skills .skill-list {
   width: 100%;
   padding-left: 0;
+  margin-bottom: 40px;
 }
 
 #skills .skill-list li {

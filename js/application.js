@@ -41,18 +41,18 @@
       return false;
     });
     return $(window).scroll(function() {
-      if ($(window).scrollTop() < $('#skills').offset().top) {
-        $('.nav li').removeClass('active');
-        return $('.nav li').eq(0).addClass('active');
-      } else if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+      if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
         $('.nav li').removeClass('active');
         return $('.nav li').eq(3).addClass('active');
-      } else if ($(window).scrollTop() > $('#experiences').offset().top) {
+      } else if ($(window).scrollTop() > $('#experiences').offset().top - 150) {
         $('.nav li').removeClass('active');
         return $('.nav li').eq(2).addClass('active');
-      } else if ($(window).scrollTop() > $('#skills').offset().top) {
+      } else if ($(window).scrollTop() > $('#skills').offset().top - 150) {
         $('.nav li').removeClass('active');
         return $('.nav li').eq(1).addClass('active');
+      } else if ($(window).scrollTop() < $('#skills').offset().top) {
+        $('.nav li').removeClass('active');
+        return $('.nav li').eq(0).addClass('active');
       }
     });
   });
