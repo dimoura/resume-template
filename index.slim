@@ -19,33 +19,34 @@ html
   body
     header.header
       .cover: .container: .row
-        .col-sm-6.col-md-4
-          ul.social-shares
-            li: a
-              i.fa.fa-heart
-              | Linkedin
-            li: a
-              i.fa.fa-heart
-              | Twitter
-            li: a
-              i.fa.fa-heart
-              | GitHub
-            li: a
-              i.fa.fa-heart
-              | Email        
-        .col-sm-6.col-md-8
+        .col-sm-6.col-md-8.col-md-offset-4.col-sm-offset-6
           h1  Sup! My name is <mark>Jefferson Moura</mark> and I'm a Front End Developer =)
+
+          ul.social-shares
+            li: a href="https://linkedin.com/in/dimoura" target="_blank"
+              i.fa.fa-linkedin
+              | Linkedin
+            li: a href="https://www.twitter.com/dimoura" target="_blank"
+              i.fa.fa-twitter
+              | Twitter
+            li: a href="https://github.com/dimoura" target="_blank"
+              i.fa.fa-github
+              | GitHub
+            li: a href="mailto: jefferson@dimoura.com"
+              i.fa.fa-envelope-o
+              | Email        
+
       .container
         nav
           .profile-avatar: img src="images/avatar.jpg" class="img-responsive"
           ul.nav
-            li: a Sumary
-            li: a Skills
-            li: a Experiences
-            li: a Education
+            li.active: a href="#sumary" Sumary
+            li: a href="#skills" Skills
+            li: a href="#experiences" Experiences
+            li: a href="#education" Education
     
     .container
-      section#sumary.col-sm-offset-3
+      section#sumary.col-xs-offset-3
         h1 Hey traveller! =)
         p I'm a self motivated and passionate developer that would like to change the world some day, and till it doesn't happens I've been trying to change part of it every day.
         p The projects that I'm more proud is 99jobs.com and techdascoisas.com.br, where I could put my desires and skills to work together to reach peoples life.
@@ -53,18 +54,39 @@ html
         p If you would like to know me more, or my projects, call me! (maybe xD... sorry I had need to do this awful joke):
       
       section#skills
-        .charts.chart-doughnut
-          h2 Front End
+        h1.section-title Skills
+        .charts.chart-doughnut.hidden-xs
+          h3 Front End
           canvas#chart-frontend
-        .charts.chart-doughnut
-          h2 Back End
-          canvas#chart-backend
-        .charts.chart-doughnut
-          h2 Manager
+            p Css
+            span 40
+            p Html
+            span 40
+            p Javascript
+            span 20
+
+        .charts.chart-doughnut.hidden-xs
+          h3 Back End
+          canvas#chart-backend data-color="#ffe"
+            p Php
+            span 60
+            p Ruby on Rails
+            span 10
+            p Mysql
+            span 30
+
+        .charts.chart-doughnut.hidden-xs
+          h3 Manager
           canvas#chart-manager
+            p Ux/UI Design
+            span 20
+            p Roller Skating
+            span 20
+            p Books
+            span 60
 
         
-        p As a Front End I have knowledge on:
+        h2 As a Front End I have knowledge on:
         ul.skill-list.frontend-skills
           li Css / Css 3
           li Sass
@@ -79,7 +101,7 @@ html
           li Adobe Creative Suite
           li Sketch
 
-        p As a Backend learner I have some skills on:
+        h2 As a Backend learner I have some skills on:
         ul.skill-list.backend-skills
           li Php
           li Laravel
@@ -88,7 +110,7 @@ html
           li MySql
           li PostgreSQL
 
-        p As person and continuous learner I've some interestes on:
+        h2 As person and continuous learner I've some interestes on:
         ul.skill-list.personal-skills
           li Ux/Ui Design
           li Motion Graphic
@@ -97,6 +119,7 @@ html
           li Books (yeah! really like them)
 
       section#experiences
+        h1.section-title Volunteer's
         .row.experience
           .col-sm-3.experience-location
             / Include logo
@@ -129,6 +152,7 @@ html
             p • Was the link between the child and the school, encouraging study and incentivizing personal growth.
 
         .row.experience
+          h1.section-title Professional Experiences
           .col-sm-3.experience-location
             / Include logo
             h1#company-99jobs
@@ -173,10 +197,11 @@ html
 
 
       section#education
+        h1.section-title Education
         .row.education
           .col-sm-6.col-md-3
             h2
-              i.fa.fa-heart
+              i.fa.fa-university
               | Formal Education
             ul.education-list
               li
@@ -184,8 +209,7 @@ html
                 | till <time datetime="2006">2006</time>
               li
                 h3 F.A.A.L. [Graduation] - Brazil
-                | till <time datetime="2010">2010</time>
-                a href="#" Transmedia Storytelling for advergames (in portuguese)
+                | till <time datetime="2010">2010</time> dissetation: Transmedia Storytelling for advergames (in portuguese)
 
           .col-sm-6.col-md-3
             h2
@@ -200,7 +224,7 @@ html
                 | 3rd Place <time datetime="2011">2011</time>
           .col-sm-6.col-md-3
             h2
-              i.fa.fa-heart
+              i.fa.fa-empire
               | Personal Formation
             ul.education-list
               li
@@ -211,14 +235,13 @@ html
                 | Since <time datetime="2015">2011</time>
           .col-sm-6.col-md-3
             h2
-              i.fa.fa-heart
+              i.fa.fa-file-text-o
               | Researchs and Papers
             ul.education-list
               li
                 h3 Transmedia Storytelling for advergames
-                a href="#" link, published <time datetime="2014">2011</time>
+                | published <time datetime="2014">2011</time>
               li
                 h3 10 bons costumes para se dar bem em sua equipe 
-                a href="http://techdascoisas.com.br/10-bons-costumes-para-se-dar-bem-em-sua-equipe
-" published: <time datetime="2015-08">Agosto - 2015</time>
+                a href="http://techdascoisas.com.br/10-bons-costumes-para-se-dar-bem-em-sua-equipe" published: <time datetime="2015-08">Agosto - 2015</time>
 

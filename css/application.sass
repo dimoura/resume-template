@@ -2,10 +2,20 @@
 
 @import config.sass
 
+*:hover
+  +smooth-transition
+
+.img-responsive
+  width: 100%
+
+section
+  margin: $padding-base-vertical*4 0
+
 /* Header */
 .cover
   background-color: $brand-pink
-  padding-bottom: 100px
+  transition: all 0.3s ease
+
   h1
     font-size: 40px
     line-height: 40px
@@ -22,18 +32,17 @@
 
     li
       display: inline-block
-      width: 24%
+      width: 19%
       text-align: center
       list-style: none
       font-size: 18px
       color: $white
-      
-      &:hover
-        border-bottom: 1px solid $white
+      border-bottom: 1px solid $brand-pink
 
       +respond-to-md
-        width: 40%
+        width: 30%
         margin: $padding-small-vertical $padding-large-horizontal
+
       +respond-to-sm
         width: 15%
         margin: 0 $padding-base-horizontal
@@ -46,59 +55,109 @@
           padding: $padding-base-vertical
           font-size: 20px
           color: $white
-          margin: 0 20%
+          margin: $padding-base-vertical 20%
 
+      &:hover
+        border-bottom: 1px solid $brand-yellow
+
+        i
+          color: $brand-yellow
 
 nav
   position: relative
 
   .profile-avatar
     width: 200px
-    height: 200px
     border: 2px solid $white
     position: absolute
     top: -100px
     left: 20px
+    transition: all 0.3s ease
+
+    +respond-to-md
+      width: 18%
+      top: -10px
 
   .nav
     width: 100%
     text-align: left
     padding-left: 25%
+    margin-bottom: 0
+    transition: all 0.3s ease
 
     li
       display: inline-block
       list-style: none
       padding-right: $padding-large-horizontal
-      
+      padding-bottom: $padding-base-vertical
+
       a
         +font-bold(16px)
+        padding-bottom: $padding-base-vertical
 
       &:hover,
       &.active
         a
-          padding-bottom: $padding-base-vertical
-          border-bottom: 1px solid $brand-pink
+          border-bottom: 2px solid $brand-pink
           color: $brand-pink
+          text-decoration: none
 
-.charts
-  width: 33%
-  display: inline-block
-  position: relative
+.fixed-header
+  transition: all 0.3s ease
+  position: fixed
+  width: 100%
+  z-index: 10
+  background-color: #fff  
+  .cover
+    height: 5px
+    transition: all 0.3s ease
+    .row
+      display: none
+      transition: all 0.3s ease
+    
+  .profile-avatar
+    width: 80px
+    top: 0px
+    transition: all 0.3s ease
 
-  h2
-    width: 100%
-    +font-title(18px)
-    position: absolute
-    top: 105px
-    text-align: center
+  .nav
+    padding-left: 130px
+    transition: all 0.3s ease
 
-  canvas
-    width: 100%
-    height: 250px
+section
+  .section-title
+    +font-title(30px)
+    color: $brand-purple
+    margin: $padding-base-vertical*5 0
 
 #skills
+
+  .charts
+    width: 32%
+    display: inline-block
+    position: relative
+    text-align: center
+
+    h3
+      width: 100%
+      +font-title(18px)
+      position: absolute
+      top: 105px
+      text-align: center
+
+      +respond-to-md
+        top: 80px
+
+    canvas
+      width: 100%
+      height: 250px
+
+      +respond-to-md
+        height: 200px
+
   .skill-list
     width: 100%
+    padding-left: 0
 
     li
       display: inline-block
@@ -113,6 +172,10 @@ nav
 
     &.personal-skills li
       background-color: $brand-blue
+
+  h2
+    +font-title(24px)
+    text-align: left
 
 #experiences
   .experience
@@ -161,3 +224,4 @@ nav
     a
       display: block
       color: $brand-pink
+

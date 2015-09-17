@@ -1,71 +1,61 @@
-$(document).ready(function(){
-  // Doughnut charts
-  var data = [
-      {
-          value: 300,
-          color:"#F7464A",
-          highlight: "#FF5A5E",
-          label: "Red"
-      },
-      {
-          value: 50,
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
-          label: "Green"
-      },
-      {
-          value: 100,
-          color: "#FDB45C",
-          highlight: "#FFC870",
-          label: "Yellow"
+(function() {
+  $(document).ready(function() {
+    var DrawChart, header_limit;
+    DrawChart = function(container, data) {
+      var chart, context;
+      context = document.getElementById(container).getContext("2d");
+      return chart = new Chart(context).Doughnut(data);
+    };
+    $('.charts canvas').each(function() {
+      var temp_container, temp_data;
+      temp_data = [];
+      temp_container = $(this).attr('id');
+      $(this).find('p').each(function() {
+        var temp_object;
+        temp_object = {
+          value: $(this).next().html(),
+          label: this.innerHTML,
+          color: '#fff333',
+          highlight: '#ff3f33'
+        };
+        return temp_data.push(temp_object);
+      });
+      return DrawChart(temp_container, temp_data);
+    });
+    header_limit = $('header').height();
+    $(window).scroll(function() {
+      return $(".header").toggleClass('fixed-header', $(this).scrollTop() > header_limit);
+    });
+    $('.nav a').click(function() {
+      var anchor_point, height_variation;
+      anchor_point = $(this).attr('href');
+      $('.nav li').removeClass('active');
+      $(this).parent().addClass('active');
+      height_variation = -400;
+      if ($('header').hasClass('fixed-header')) {
+        height_variation = -100;
       }
-  ]
-  var ctx = document.getElementById("chart-frontend").getContext("2d");
-  var myDoughnutChart = new Chart(ctx).Doughnut(data);
+      $('html,body').animate({
+        scrollTop: $(anchor_point).offset().top + height_variation
+      }, 1000);
+      return false;
+    });
+    return $(window).scroll(function() {
+      if ($(window).scrollTop() < $('#skills').offset().top) {
+        $('.nav li').removeClass('active');
+        return $('.nav li').eq(0).addClass('active');
+      } else if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+        $('.nav li').removeClass('active');
+        return $('.nav li').eq(3).addClass('active');
+      } else if ($(window).scrollTop() > $('#experiences').offset().top) {
+        $('.nav li').removeClass('active');
+        return $('.nav li').eq(2).addClass('active');
+      } else if ($(window).scrollTop() > $('#skills').offset().top) {
+        $('.nav li').removeClass('active');
+        return $('.nav li').eq(1).addClass('active');
+      }
+    });
+  });
 
-  var data = [
-      {
-          value: 300,
-          color:"#F7464A",
-          highlight: "#FF5A5E",
-          label: "Red"
-      },
-      {
-          value: 50,
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
-          label: "Green"
-      },
-      {
-          value: 100,
-          color: "#FDB45C",
-          highlight: "#FFC870",
-          label: "Yellow"
-      }
-  ]
-  var ctx = document.getElementById("chart-backend").getContext("2d");
-  var myDoughnutChart = new Chart(ctx).Doughnut(data);
+}).call(this);
 
-  var data = [
-      {
-          value: 300,
-          color:"#F7464A",
-          highlight: "#FF5A5E",
-          label: "Red"
-      },
-      {
-          value: 50,
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
-          label: "Green"
-      },
-      {
-          value: 100,
-          color: "#FDB45C",
-          highlight: "#FFC870",
-          label: "Yellow"
-      }
-  ]
-  var ctx = document.getElementById("chart-manager").getContext("2d");
-  var myDoughnutChart = new Chart(ctx).Doughnut(data);
-});
