@@ -1,23 +1,15 @@
-// colors
+// brand colors
 $brand-blue: #5d83c2
 $brand-pink: #CB416E
 $brand-yellow: #ECFF21
 $brand-purple: #682163
 $brand-orange: #DD8865
-$brand-lime: #CADA2A
 
 // google blue-grey pallete
 $white: #fff
-$grey-50: #ECEFF1
-$grey-100: #CFD8DC
 $grey-200: #B0BEC5
-$grey-300: #90A4AE
-$grey-400: #78909C
 $grey-500: #607D8B
-$grey-600: #546E7A
-$grey-700: #455A64
-$grey-800: #37474F
-$grey-900: #263238
+
 
 /* Structure */
 $padding-small-vertical: 5px
@@ -29,10 +21,6 @@ $padding-base-horizontal: $padding-small-horizontal*2
 $padding-large-horizontal: $padding-base-horizontal*2
 
 
-// border radius
-@mixin border-radius($radius: 6)
-  border-radius: $radius
-
 // fonts
 @mixin font-title($size)
   font-family: 'Abel', Arial, Helvetica, sans-serif
@@ -40,12 +28,6 @@ $padding-large-horizontal: $padding-base-horizontal*2
   font-weight: 400
   text-align: center
   line-height: $size*0.85
-
-@mixin font-highlight
-  color: $brand-blue
-
-  &:hover
-    color: $brand-purple
 
 @mixin font-paragraph($size: 22px)
   font-family: 'Open Sans', sans-serif
@@ -69,11 +51,6 @@ $padding-large-horizontal: $padding-base-horizontal*2
 @mixin respond-to-sm
   @media all and (max-width: 768px) 
     @content
-
-@mixin respond-to-xs
-  @media all and (max-width: 640px) 
-    @content
-
 
 // transitions
 @mixin smooth-transition
