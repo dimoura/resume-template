@@ -179,6 +179,17 @@ nav .nav li.active a {
   transition: all 0.3s ease;
 }
 
+@media all and (max-width: 640px) {
+  .fixed-header .nav li {
+    display: none;
+  }
+  .fixed-header .nav li.active {
+    display: block;
+    font-size: 18px;
+    padding-top: 10px;
+  }
+}
+
 section .section-title {
   font-family: 'Abel', Arial, Helvetica, sans-serif;
   font-size: 30px;

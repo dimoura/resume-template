@@ -29,6 +29,7 @@ $padding-large-horizontal: $padding-base-horizontal*2
   text-align: center
   line-height: $size*0.85
 
+
 @mixin font-paragraph($size: 22px)
   font-family: 'Open Sans', sans-serif
   font-weight: 300
@@ -51,6 +52,11 @@ $padding-large-horizontal: $padding-base-horizontal*2
 @mixin respond-to-sm
   @media all and (max-width: 768px) 
     @content
+
+@mixin respond-to-xs
+  @media all and (max-width: 640px) 
+    @content
+
 
 // transitions
 @mixin smooth-transition

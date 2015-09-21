@@ -135,6 +135,15 @@ nav
   .nav
     padding-left: 130px
     transition: all 0.3s ease
+    
+    +respond-to-xs
+      li
+        display: none
+
+        &.active
+          display: block
+          font-size: 18px
+          padding-top: $padding-base-vertical
 
 section
   .section-title
