@@ -22,10 +22,6 @@
       });
       return DrawChart(temp_container, temp_data);
     });
-    header_limit = $('header').height();
-    $(window).scroll(function() {
-      return $(".header").toggleClass('fixed-header', $(this).scrollTop() > header_limit);
-    });
     $('.nav a').click(function() {
       var anchor_point, height_variation;
       anchor_point = $(this).attr('href');
@@ -40,7 +36,9 @@
       }, 1000);
       return false;
     });
+    header_limit = $('header').height();
     return $(window).scroll(function() {
+      $(".header").toggleClass('fixed-header', $(this).scrollTop() > header_limit);
       if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
         $('.nav li').removeClass('active');
         return $('.nav li').eq(3).addClass('active');

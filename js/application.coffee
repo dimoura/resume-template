@@ -20,12 +20,6 @@ $(document).ready( ->
       temp_data.push temp_object
     DrawChart(temp_container, temp_data)
 
-  # Cover toggle
-  header_limit = $('header').height()
-  $(window).scroll(->
-    $(".header").toggleClass('fixed-header', ($(this).scrollTop() > header_limit))
-  )
-
   # Smooth Scroller for nav
   $('.nav a').click(->
     anchor_point = $(this).attr('href')
@@ -46,8 +40,15 @@ $(document).ready( ->
     return false
   )
 
+  # Cover toggle limmit
+  header_limit = $('header').height()
+
   #change nav due the scroll
   $(window).scroll(->
+
+    # Afix nav for scrolling
+    $(".header").toggleClass('fixed-header', ($(this).scrollTop() > header_limit))
+
     if $(window).scrollTop() + $(window).height() > $(document).height() - 100
       $('.nav li').removeClass('active')
       $('.nav li').eq(3).addClass('active')

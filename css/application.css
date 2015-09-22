@@ -14,29 +14,41 @@ section {
 }
 
 /* Header */
-.cover {
+.header {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header .cover {
   background-color: #CB416E;
   transition: all 0.3s ease;
 }
 
-.cover h1 {
+.header .cover h1 {
   font-size: 40px;
   line-height: 40px;
   color: #fff;
 }
 
-.cover h1 mark {
+.header .cover h1 mark {
   color: #ECFF21;
   background-color: #5d83c2;
 }
 
-.cover .social-shares {
+.header .cover .social-shares {
   width: 100%;
   text-align: left;
   padding: 20px 0;
 }
 
-.cover .social-shares li {
+@media all and (max-width: 768px) {
+  .header .cover .social-shares {
+    text-align: center;
+  }
+}
+
+.header .cover .social-shares li {
   display: inline-block;
   width: 19%;
   text-align: center;
@@ -47,25 +59,25 @@ section {
 }
 
 @media all and (max-width: 990px) {
-  .cover .social-shares li {
-    width: 30%;
+  .header .cover .social-shares li {
+    width: 16%;
     margin: 5px 16px;
   }
 }
 
 @media all and (max-width: 768px) {
-  .cover .social-shares li {
-    width: 15%;
-    margin: 0 8px;
+  .header .cover .social-shares li {
+    width: 23%;
+    margin: 0;
   }
 }
 
-.cover .social-shares li a {
+.header .cover .social-shares li a {
   color: #ECFF21;
   text-decoration: none;
 }
 
-.cover .social-shares li a i {
+.header .cover .social-shares li a i {
   border: 2px solid #fff;
   border-radius: 100%;
   padding: 10px;
@@ -74,19 +86,19 @@ section {
   margin: 10px 20%;
 }
 
-.cover .social-shares li:hover a {
+.header .cover .social-shares li:hover a {
   color: #fff;
 }
 
-.cover .social-shares li:hover i {
+.header .cover .social-shares li:hover i {
   color: #ECFF21;
 }
 
-nav {
+.header nav {
   position: relative;
 }
 
-nav .profile-avatar {
+.header nav .profile-avatar {
   width: 200px;
   position: absolute;
   top: -100px;
@@ -95,17 +107,17 @@ nav .profile-avatar {
 }
 
 @media all and (max-width: 990px) {
-  nav .profile-avatar {
+  .header nav .profile-avatar {
     width: 18%;
     top: -10px;
   }
 }
 
-nav .profile-avatar img {
+.header nav .profile-avatar img {
   border: 2px solid #fff;
 }
 
-nav .profile-avatar .profile-status li {
+.header nav .profile-avatar .profile-status li {
   font-family: 'Abel', Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -116,7 +128,7 @@ nav .profile-avatar .profile-status li {
   color: #5d83c2;
 }
 
-nav .nav {
+.header nav .nav {
   width: 100%;
   text-align: left;
   padding-left: 25%;
@@ -124,14 +136,14 @@ nav .nav {
   transition: all 0.3s ease;
 }
 
-nav .nav li {
+.header nav .nav li {
   display: inline-block;
   list-style: none;
   padding-right: 16px;
   padding-bottom: 10px;
 }
 
-nav .nav li a {
+.header nav .nav li a {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-style: italic;
@@ -139,14 +151,25 @@ nav .nav li a {
   padding-bottom: 10px;
 }
 
-nav .nav li:hover a,
-nav .nav li.active a {
+@media all and (max-width: 640px) {
+  .header nav .nav li {
+    padding-right: 4px;
+  }
+  .header nav .nav li a {
+    font-size: 14px;
+  }
+}
+
+.header nav .nav li:hover a,
+.header nav .nav li.active a {
   border-bottom: 2px solid #CB416E;
   color: #CB416E;
   text-decoration: none;
 }
 
-.fixed-header {
+.header.fixed-header {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: fixed;
   width: 100%;
@@ -154,36 +177,36 @@ nav .nav li.active a {
   background-color: #fff;
 }
 
-.fixed-header .cover {
+.header.fixed-header .cover {
   height: 5px;
   transition: all 0.3s ease;
 }
 
-.fixed-header .cover .row {
+.header.fixed-header .cover .row {
   display: none;
   transition: all 0.3s ease;
 }
 
-.fixed-header .profile-avatar {
+.header.fixed-header .profile-avatar {
   width: 80px;
   top: 0px;
   transition: all 0.3s ease;
 }
 
-.fixed-header .profile-avatar ul {
+.header.fixed-header .profile-avatar ul {
   display: none;
 }
 
-.fixed-header .nav {
+.header.fixed-header .nav {
   padding-left: 130px;
   transition: all 0.3s ease;
 }
 
 @media all and (max-width: 640px) {
-  .fixed-header .nav li {
+  .header.fixed-header .nav li {
     display: none;
   }
-  .fixed-header .nav li.active {
+  .header.fixed-header .nav li.active {
     display: block;
     font-size: 18px;
     padding-top: 10px;
@@ -249,6 +272,12 @@ section .section-title {
   padding: 5px 4px;
   color: #fff;
   border-radius: 10px 0;
+}
+
+@media all and (max-width: 768px) {
+  #skills .skill-list li {
+    margin-bottom: 10px;
+  }
 }
 
 #skills .skill-list.backend-skills li {
@@ -332,6 +361,7 @@ section .section-title {
   line-height: 17.64706px;
   font-style: italic;
   color: #B0BEC5;
+  margin-bottom: 40px;
 }
 
 #education .education-list h3 {
